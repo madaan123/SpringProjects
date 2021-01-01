@@ -1,24 +1,18 @@
 package org.studyeasy;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.studyeasy.cars.Corolla;
-import org.studyeasy.cars.Swift;
 import org.studyeasy.interfaces.Car;
 
 public class App {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Car swift = new Swift();
-		Car corolla = new Corolla();
 		
-		System.out.println(swift.specs());
-		System.out.println(corolla.specs());
-		
+		// Setting up of context for dependency injection with the help of java bean
 		AnnotationConfigApplicationContext context = 
 				new AnnotationConfigApplicationContext(AppConfig.class);
 		
-		Car myCar = context.getBean("swift",Car.class);
+		Car myCar = context.getBean("corolla",Car.class);
 		System.out.println(myCar.specs());
 		
 		context.close();
