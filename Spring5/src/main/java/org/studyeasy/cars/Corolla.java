@@ -9,7 +9,7 @@ import org.studyeasy.interfaces.Engine;
 @Component
 public class Corolla implements Car {
 	@Autowired
-	@Qualifier("V8Engine")
+	@Qualifier("engineType")
 	Engine engine;
 
 	@Override

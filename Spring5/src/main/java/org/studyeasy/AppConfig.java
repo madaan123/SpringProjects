@@ -5,8 +5,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.studyeasy.cars.Corolla;
 import org.studyeasy.cars.Swift;
-import org.studyeasy.specs.V6;
-import org.studyeasy.specs.V8;
+import org.studyeasy.specs.EngineType;
 
 @Configuration
 @ComponentScan("org.studyeasy")
@@ -21,14 +20,9 @@ public class AppConfig {
 	public Corolla corolla() {
 		return new Corolla();
 	}
-
-	@Bean("V6Engine")
-	public V8 v8() {
-		return new V8();
-	}
 	
-	@Bean("V8Engine")
-	public V6 v6() {
-		return new V6();
+	@Bean("engineType")
+	public EngineType engineType() {
+		return new EngineType("V8 Engine");
 	}
 }
