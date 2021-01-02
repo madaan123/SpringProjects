@@ -1,5 +1,9 @@
 package org.studyeasy;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
@@ -18,7 +22,16 @@ public class MainController {
 	
 	@RequestMapping("displayname")
 	public String displayName(@RequestParam("firstName") String firstName, Model model) {
+		Date date = new Date();
+		
+		List<String> names = new ArrayList<>();
+		names.add("Ashish");
+		names.add("Rohan");
+		names.add("Sam");
+		
+		model.addAttribute("date",date);
 		model.addAttribute("name",firstName);
+		model.addAttribute("employees",names);
 		//request.setAttribute("firstName", firstName);
 		return "displayName";
 	}
