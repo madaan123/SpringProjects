@@ -14,9 +14,14 @@
 <hr/>
 <form:form action="displayUserInfo" modelAttribute="user">
 Name: <form:input path="name"/><br/><br/>
-Gender: <form:radiobuttons path="gender" items="${genderMap}"/><br/><br/>
+Gender: Male<form:radiobutton path="gender" value="Male"/>
+		Female <form:radiobutton path="gender" value="Female"/>
+<br/><br/>
 Country: <form:select path="country">
-		 <form:options items="${countryMap}"/>
+		 <form:option value="India"/>
+		 <form:option value="USA"/>
+		 <form:option value="Russia"/>
+		 <form:option value="Germany"/>
 	     </form:select> <br/><br/>
 Introduction: <form:textarea path="introduction"/> <br/><br/>
 Countries Visited: 

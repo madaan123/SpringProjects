@@ -3,7 +3,10 @@ package org.studyeasy;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,27 +23,24 @@ public class MainController {
 		User user = new User();
 		modelAndView.addObject("user",user);
 		
-		Map<String, String> genderMap = new HashMap<String, String>();
-		genderMap.put("male", "Male");
-		genderMap.put("female", "Female");
-		modelAndView.addObject("genderMap",genderMap);
-		
-		Map<String, String> countryMap = new HashMap<String, String>();
-		countryMap.put("India", "India");
-		countryMap.put("USA", "United States");
-		countryMap.put("Russia", "Russia");
-		countryMap.put("Ireland", "Ireland");
-		modelAndView.addObject("countryMap",countryMap);
-		
 		return modelAndView;
 	}
 	
 	@PostMapping("/displayUserInfo")
-	public ModelAndView displayUserInfo(@ModelAttribute User user) {
+	public ModelAndView displayUserInfo(@Valid User user, BindingResult result) {
 		ModelAndView modelAndView = new ModelAndView("displayUserInfo");
 		System.out.println(user);
 		modelAndView.addObject("user",user);
-		return modelAndView;
+		if(result.hasErrors()) {
+			ModelAndView repopulateModelAndView = new ModelAndView("userFormView");
+			repopulateModelAndView.addObject("user",user);
+			
+			System.out.println("Has errors!!");
+			return repopulateModelAndView;
+		}
+		else {
+			return modelAndView;
+		}
 	}
 	
 }
