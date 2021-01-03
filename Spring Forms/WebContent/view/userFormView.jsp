@@ -7,19 +7,22 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>User form</title>
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/files/css/style.css">
 </head>
 <body>
+<h4 align="center">Submit Your Info</h4>
+<hr/>
 <form:form action="displayUserInfo" modelAttribute="user">
-Name: <form:input path="name"/><br/>
-Gender: <form:radiobuttons path="gender" items="${genderMap}"/><br/>
+Name: <form:input path="name"/><br/><br/>
+Gender: <form:radiobuttons path="gender" items="${genderMap}"/><br/><br/>
 Country: <form:select path="country">
 		 <form:options items="${countryMap}"/>
-	     </form:select> <br/>
-Introduction: <form:textarea path="introduction"/> <br/>
+	     </form:select> <br/><br/>
+Introduction: <form:textarea path="introduction"/> <br/><br/>
 Countries Visited: 
 China <form:checkbox path="countryVisited" value="China"/>
 Italy <form:checkbox path="countryVisited" value="Italy"/>
-Spain <form:checkbox path="countryVisited" value="Spain"/> <br/>
+Spain <form:checkbox path="countryVisited" value="Spain"/> <br/><br/>
 <input type="submit" value="Submit"/>
 </form:form>
 </body>
