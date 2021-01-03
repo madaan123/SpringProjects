@@ -7,6 +7,9 @@ public class User_DB {
 	private String first_name;
 	private String last_name;
 	
+	public User_DB() {
+	}
+
 	public User_DB(int user_id, String username, String password, String first_name, String last_name) {
 		this.user_id = user_id;
 		this.username = username;

@@ -16,7 +16,7 @@ public class AppConfig {
 				new DriverManagerDataSource();
 		
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/studyeasy_db");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/studyeasy_db?useSSL=false");
 		dataSource.setUsername("ashish");
 		dataSource.setPassword("ashish@1");
 		

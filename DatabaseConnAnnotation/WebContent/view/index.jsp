@@ -11,6 +11,7 @@
 </head>
 <body>
 <h3>Hello</h3>
+<a href="${pageContext.request.contextPath}/addUser">Add User</a><p/>
 <table border="1">
 <tr>
 <th>User ID</th>
