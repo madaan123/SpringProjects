@@ -13,21 +13,22 @@
 <h4 align="center">Submit Your Info</h4>
 <hr/>
 <form:form action="displayUserInfo" modelAttribute="user">
-Name: <form:input path="name"/><br/><br/>
+Name: <form:input path="name"/><p/>
+	  <form:errors path="name" cssStyle="color:red"/><p/>
 Gender: Male<form:radiobutton path="gender" value="Male"/>
 		Female <form:radiobutton path="gender" value="Female"/>
-<br/><br/>
+<p/>
 Country: <form:select path="country">
 		 <form:option value="India"/>
 		 <form:option value="USA"/>
 		 <form:option value="Russia"/>
 		 <form:option value="Germany"/>
 	     </form:select> <br/><br/>
-Introduction: <form:textarea path="introduction"/> <br/><br/>
+Introduction: <form:textarea path="introduction"/> <p/>
 Countries Visited: 
 China <form:checkbox path="countryVisited" value="China"/>
 Italy <form:checkbox path="countryVisited" value="Italy"/>
-Spain <form:checkbox path="countryVisited" value="Spain"/> <br/><br/>
+Spain <form:checkbox path="countryVisited" value="Spain"/> <p/>
 <input type="submit" value="Submit"/>
 </form:form>
 </body>

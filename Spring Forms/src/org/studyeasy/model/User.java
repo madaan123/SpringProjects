@@ -5,7 +5,7 @@ import java.util.Arrays;
 import javax.validation.constraints.Size;
 
 public class User {
-	@Size(min = 5, max = 10)
+	@Size(min = 5, max = 10 , message = "Enter name between 5 to 10 characters")
 	private String name;
 	private String gender,country,introduction,countryVisited[];
 

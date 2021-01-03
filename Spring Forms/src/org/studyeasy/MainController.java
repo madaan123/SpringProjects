@@ -27,7 +27,7 @@ public class MainController {
 	}
 	
 	@PostMapping("/displayUserInfo")
-	public ModelAndView displayUserInfo(@Valid User user, BindingResult result) {
+	public ModelAndView displayUserInfo(@ModelAttribute("user") @Valid User user, BindingResult result) {
 		ModelAndView modelAndView = new ModelAndView("displayUserInfo");
 		System.out.println(user);
 		modelAndView.addObject("user",user);
