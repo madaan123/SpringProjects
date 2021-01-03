@@ -12,8 +12,15 @@
 <form:form action="displayUserInfo" modelAttribute="user">
 Name: <form:input path="name"/><br/>
 Gender: <form:radiobuttons path="gender" items="${genderMap}"/><br/>
-		<input type="submit" value="Submit"/>
-		
+Country: <form:select path="country">
+		 <form:options items="${countryMap}"/>
+	     </form:select> <br/>
+Introduction: <form:textarea path="introduction"/> <br/>
+Countries Visited: 
+China <form:checkbox path="countryVisited" value="China"/>
+Italy <form:checkbox path="countryVisited" value="Italy"/>
+Spain <form:checkbox path="countryVisited" value="Spain"/> <br/>
+<input type="submit" value="Submit"/>
 </form:form>
 </body>
 </html>

@@ -11,5 +11,13 @@
 ${user.name}
 <br/>
 ${user.gender}
+<br/>
+${user.country }
+<br/>
+${user.introduction }
+<br/>
+<c:forEach var="item" items="${user.countryVisited}">
+${item}
+</c:forEach>
 </body>
 </html>

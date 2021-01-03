@@ -32,6 +32,13 @@ public class MainController {
 		genderMap.put("female", "Female");
 		modelAndView.addObject("genderMap",genderMap);
 		
+		Map<String, String> countryMap = new HashMap<String, String>();
+		countryMap.put("India", "India");
+		countryMap.put("USA", "United States");
+		countryMap.put("Russia", "Russia");
+		countryMap.put("Ireland", "Ireland");
+		modelAndView.addObject("countryMap",countryMap);
+		
 		return modelAndView;
 	}
 	
